@@ -1,6 +1,10 @@
 To run put in this command into the terminal with a user account with admin privileges
 curl -O https://raw.githubusercontent.com/DominicVillaniSSSD/update/main/update.sh && chmod +x update.sh && ./update.sh
 
+```
+curl -O https://raw.githubusercontent.com/DominicVillaniSSSD/update/main/update.sh && chmod +x update.sh && ./update.sh
+```
+
 This will update these apps from these sources
 google_chrome_url="https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg"
 google_drive_url="https://dl.google.com/drive-file-stream/GoogleDrive.dmg"
