@@ -8,3 +8,9 @@ smart_notebook_url="https://downloads.smarttech.com/software/education/23.2/mac/
 zoom_url="https://zoom.us/client/latest/Zoom.pkg"
 air_server_url="https://dl.airserver.com/mac/AirServer-7.2.7.dmg"
 app_cleaner_url="https://freemacsoft.net/downloads/AppCleaner_3.6.8.zip"
+
+```
+function test() {
+  console.log("This code will have a copy button to the right of it");
+}
+```
