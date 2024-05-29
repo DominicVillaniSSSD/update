@@ -34,12 +34,17 @@ print_logo
 #Checks architecture
 check_architecture
 
+if [[ "$ARCH" == "arm64" ]]; then
+    zoom_url="$zoom_apple_silicon_url"
+fi
+
 install_applications(){
 install_application_from_url "$zoom_url"
 install_application_from_url "$smart_notebook_url"
 install_application_from_url "$google_chrome_url"
 install_application_from_url "$app_cleaner_url"
 install_application_from_url "$air_server_url"
+install_application_from_url "$crisis_go
 }
 
 install_applications
