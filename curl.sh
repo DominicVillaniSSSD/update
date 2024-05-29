@@ -10,20 +10,13 @@ air_server_url="https://dl.airserver.com/mac/AirServer-7.2.7.dmg"
 app_cleaner_url="https://freemacsoft.net/downloads/AppCleaner_3.6.8.zip"
 
 
-Install_application_from_url() {
+install_application_from_url() {
     local app_url=$1
-    local temp_file="/tmp/$(basename "$app_url")"
+    local file_name=$(basename "$app_url")
+    local temp_file="/tmp/$file_name"
 
     echo -e "${YELLOW}Downloading application from URL: $app_url...${NC}"
-    curl -L -o "$temp_file" -J "$app_url"
-
-    # Extract filename from the headers if available
-    local content_disposition=$(curl -I -s "$app_url" | grep -i 'content-disposition:')
-    if [[ $content_disposition =~ filename=\"(.+)\" ]]; then
-        local file_name=${BASH_REMATCH[1]}
-        mv "$temp_file" "/tmp/$file_name"
-        temp_file="/tmp/$file_name"
-    fi
+    curl -L -o "$temp_file" "$app_url"
 
     if [[ -f "$temp_file" ]]; then
         echo -e "${GREEN}Download successful. Installing application...${NC}"
@@ -36,6 +29,5 @@ Install_application_from_url() {
         echo -e "${RED}Failed to download the application.${NC}"
     fi
 }
-
 
 
