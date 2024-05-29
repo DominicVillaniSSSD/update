@@ -9,9 +9,6 @@ zoom_url="https://zoom.us/client/latest/Zoom.pkg"
 air_server_url="https://dl.airserver.com/mac/AirServer-7.2.7.dmg"
 app_cleaner_url="https://freemacsoft.net/downloads/AppCleaner_3.6.8.zip"
 
-zoom_intell_url="https://zoom.us/client/latest/Zoom.pkg"
-zoom_apple_silicon_url="https://zoom.us/client/latest/Zoom.pkg?archType=arm64"
-crisis_go_url="https://crisisgoapp.s3.amazonaws.com/Mac/CrisisGo_6.22.1.pkg"
 
 Install_application_from_url() {
     local app_url=$1
