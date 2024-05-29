@@ -13,13 +13,20 @@ zoom_intell_url="https://zoom.us/client/latest/Zoom.pkg"
 zoom_apple_silicon_url="https://zoom.us/client/latest/Zoom.pkg?archType=arm64"
 crisis_go_url="https://crisisgoapp.s3.amazonaws.com/Mac/CrisisGo_6.22.1.pkg"
 
-install_application_from_url() {
+Install_application_from_url() {
     local app_url=$1
-    local file_name=$(basename "$app_url")
-    local temp_file="/tmp/$file_name"
+    local temp_file="/tmp/$(basename "$app_url")"
 
     echo -e "${YELLOW}Downloading application from URL: $app_url...${NC}"
-    curl -L -o "$temp_file" "$app_url"
+    curl -L -o "$temp_file" -J "$app_url"
+
+    # Extract filename from the headers if available
+    local content_disposition=$(curl -I -s "$app_url" | grep -i 'content-disposition:')
+    if [[ $content_disposition =~ filename=\"(.+)\" ]]; then
+        local file_name=${BASH_REMATCH[1]}
+        mv "$temp_file" "/tmp/$file_name"
+        temp_file="/tmp/$file_name"
+    fi
 
     if [[ -f "$temp_file" ]]; then
         echo -e "${GREEN}Download successful. Installing application...${NC}"
@@ -32,5 +39,6 @@ install_application_from_url() {
         echo -e "${RED}Failed to download the application.${NC}"
     fi
 }
+
 
 
