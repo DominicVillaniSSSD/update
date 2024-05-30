@@ -1,17 +1,21 @@
 #!/bin/bash
 # Directory to store the scripts
-#test branch
+
 TEMP_DIR="/tmp/update-scripts"
 
 # Create a temporary directory
 mkdir -p $TEMP_DIR
 cd $TEMP_DIR
 
+# Set the branch
+echo "test branch"
+banch="test"
+
 # Download necessary scripts
-curl -L -o curl.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/main/curl.sh
-curl -L -o install_handlers.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/main/install_handlers.sh
-curl -L -o logo.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/main/logo.sh
-curl -L -o setup.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/main/setup.sh
+curl -L -o curl.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$banch/curl.sh
+curl -L -o install_handlers.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$banch/install_handlers.sh
+curl -L -o logo.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$banch/logo.sh
+curl -L -o setup.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$banch/setup.sh
 # Add more curl commands for additional scripts as needed
 
 # Make the scripts executable
@@ -35,9 +39,9 @@ print_logo
 #Checks architecture
 check_architecture
 
-if [[ "$ARCH" == "arm64" ]]; then
-    zoom_url="$zoom_apple_silicon_url"
-fi
+# if [[ "$ARCH" == "arm64" ]]; then
+#     zoom_url="$zoom_apple_silicon_url"
+# fi
 
 install_applications(){
 install_application_from_url "$zoom_url"
@@ -48,7 +52,7 @@ install_application_from_url "$air_server_url"
 install_application_from_url "$crisis_go"
 }
 
-install_applications
+#install_applications
 
 # Clean up
 cd ..
