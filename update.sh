@@ -8,14 +8,13 @@ mkdir -p $TEMP_DIR
 cd $TEMP_DIR
 
 # Set the branch
-echo "test branch"
-banch="test"
-
+branch="test"
+echo "this is the $branch branch"
 # Download necessary scripts
-curl -L -o curl.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$banch/curl.sh
-curl -L -o install_handlers.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$banch/install_handlers.sh
-curl -L -o logo.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$banch/logo.sh
-curl -L -o setup.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$banch/setup.sh
+curl -L -o curl.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/curl.sh
+curl -L -o install_handlers.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/install_handlers.sh
+curl -L -o logo.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/logo.sh
+curl -L -o setup.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/setup.sh
 # Add more curl commands for additional scripts as needed
 
 # Make the scripts executable
