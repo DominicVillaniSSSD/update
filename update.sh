@@ -9,7 +9,7 @@ cd $TEMP_DIR
 
 # Set the branch
 branch="test"
-echo "this is the $branch branch"
+
 # Download necessary scripts
 curl -L -o curl.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/curl.sh
 curl -L -o install_handlers.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/install_handlers.sh
@@ -34,7 +34,7 @@ source ./setup.sh
 
 #Prints logo
 print_logo
-
+echo "this is the $branch branch"
 #Checks architecture
 check_architecture
 
@@ -52,6 +52,7 @@ install_application_from_url "$crisis_go"
 }
 
 #install_applications
+install_application_from_url "$crisis_go"
 
 # Clean up
 cd ..
