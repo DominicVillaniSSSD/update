@@ -8,7 +8,7 @@ smart_notebook_url="https://downloads.smarttech.com/software/education/23.2/mac/
 zoom_url="https://zoom.us/client/latest/Zoom.pkg"
 air_server_url="https://dl.airserver.com/mac/AirServer-7.2.7.dmg"
 app_cleaner_url="https://freemacsoft.net/downloads/AppCleaner_3.6.8.zip"
-crisis_go=“https://crisisgoapp.s3.amazonaws.com/Mac/CrisisGo_6.22.1.pkg”
+crisis_go="https://crisisgoapp.s3.amazonaws.com/Mac/CrisisGo_6.22.1.pkg"
 # need to fix arm zoom
 zoom_arm64_url="https://zoom.us/client/latest/Zoom.pkg?archType=arm64"
 
@@ -32,5 +32,6 @@ install_application_from_url() {
         echo -e "${RED}Failed to download the application.${NC}"
     fi
 }
+
 
 
