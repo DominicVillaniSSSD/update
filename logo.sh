@@ -1,5 +1,5 @@
 #!/bin/bash
-
+source set.sh
 print_logo() {
  sudo echo "
   SSSSS    SSSSS   SSSSS    DDDDD  
@@ -10,5 +10,10 @@ print_logo() {
  S     S  S     S  S     S  D    D 
   SSSSS    SSSSS    SSSSS   DDDDD  
 "
+}
+
+print_finished() {
+  # echo -e "${RED}This text is red${NC}"
+  echo -e "${BLUE}finished"
 }
 
