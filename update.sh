@@ -52,8 +52,8 @@ install_application_from_url "$crisis_go"
 }
 
 #install_applications
-install_application_from_url "$crisis_go"
-
+#install_application_from_url "$crisis_go"
+install_application_from_url "$zoom_arm64_url"
 # Clean up
 cd ..
 rm -rf $TEMP_DIR
