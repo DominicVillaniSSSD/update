@@ -4,7 +4,7 @@ source setup.sh
 install_zip(){
     local zip_file=$1
     echo -e "${YELLOW}Unzipping $zip_file...${NC}"
-    unzip "$zip_file" -d "/tmp/unzipped_content" >/dev/null 2>&1
+    unzip -qq "$zip_file" -d "/tmp/unzipped_content"  # Using -qq for quieter output
     process_file "/tmp/unzipped_content"
     rm "$zip_file"
     echo -e "${DARK_GREEN}Installation of $zip_file complete${NC}"
