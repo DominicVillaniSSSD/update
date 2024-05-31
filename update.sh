@@ -39,7 +39,7 @@ echo "this is the $branch branch"
 check_architecture
 
  if [[ "$ARCH" == "arm64" ]]; then
-     zoom_url="$zoom_apple_silicon_url"
+     zoom_url="$zoom_arm64_url"
  fi
 
 install_applications(){
@@ -53,7 +53,7 @@ install_application_from_url "$crisis_go"
 
 #install_applications
 #install_application_from_url "$crisis_go"
-install_application_from_url "$zoom_arm64_url"
+install_application_from_url "$zoom_url"
 # Clean up
 #printing a finished logo
 print_finished
