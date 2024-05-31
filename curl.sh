@@ -15,7 +15,7 @@ zoom_arm64_url="https://zoom.us/client/latest/Zoom.pkg?archType=arm64"
 
 install_application_from_url() {
     local app_url=$1
-    local file_name=$(basename "$app_url")
+    local file_name=$(basename "${app_url%%\?*}")  # Strip query parameters from the URL
     local temp_file="/tmp/$file_name"
 
     echo -e "${YELLOW}Downloading application from URL: $app_url...${NC}"
