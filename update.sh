@@ -52,8 +52,8 @@ install_application_from_url "$crisis_go"
 }
 
 #install_applications
-install_application_from_url "$app_cleaner_url"
-#install_application_from_url "$zoom_url"
+#install_application_from_url "$app_cleaner_url"
+install_application_from_url "$zoom_url"
 # Clean up
 #printing a finished logo
 print_finished
