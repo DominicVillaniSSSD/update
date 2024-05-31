@@ -1,5 +1,5 @@
 #!/bin/bash
-source set.sh
+source setup.sh
 print_logo() {
  sudo echo "
   SSSSS    SSSSS   SSSSS    DDDDD  
