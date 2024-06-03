@@ -13,6 +13,8 @@ crisis_go="https://crisisgoapp.s3.amazonaws.com/Mac/CrisisGo_6.22.1.pkg"
 # arm zoom link
 zoom_arm64_url="https://zoom.us/client/latest/Zoom.pkg?archType=arm64" 
 
+#cannon driver testing 
+cannon_driver="https://downloads.canon.com/bicg2024/drivers/PS-v4.17.17-Mac.zip"
 
 install_application_from_url() {
     local app_url=$1

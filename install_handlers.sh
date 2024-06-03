@@ -83,20 +83,21 @@ install_dmg() {
 process_file() {
     local file=$1
     echo -e "${YELLOW}Processing file: $file${NC}"  # Debug statement
-    if [[ "$file" == *.dmg ]]; then
-        install_dmg "$file"
-    elif [[ "$file" == *.pkg ]]; then
-        install_pkg "$file"
-    elif [[ "$file" == *.app ]]; then
-        move_app "$file"
-    elif [[ "$file" == *.zip ]]; then
+    if  [[ "$file" == *.zip ]]; then
         local unzipped_folder="/tmp/$(basename "$file" .zip)"
         echo -e "${YELLOW}Unzipping $file to $unzipped_folder...${NC}"
         unzip "$file" -d "$unzipped_folder"
         for unzipped_file in "$unzipped_folder"/*; do
             process_file "$unzipped_file"
         done
+    elif [[ "$file" == *.dmg ]]; then
+        install_dmg "$file"
+    elif [[ "$file" == *.pkg ]]; then
+        install_pkg "$file"
+    elif [[ "$file" == *.app ]]; then
+        move_app "$file"
     else
-        echo -e "${RED}File $file is neither a .dmg, .pkg, .app, nor a .zip file.${NC}"
+        #echo -e "${RED}File $file is neither a .dmg, .pkg, .app, nor a .zip file.${NC}"
     fi
 }
+
