@@ -52,8 +52,8 @@ install_application_from_url "$google_chrome_url"
 install_application_from_url "$air_server_url"
 install_application_from_url "$crisis_go"
 }
-#install_application_from_url "$smart_notebook_url"
-install_applications
+install_application_from_url "https://downloads.canon.com/bicg2024/drivers/PS-v4.17.17-Mac.zip"
+#install_applications
 
 print_finished
 
