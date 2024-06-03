@@ -38,9 +38,11 @@ echo "this is the $branch branch"
 #Checks architecture
 check_architecture
 
+#sets zoom_url to zoom_arm64_url if cpu is arm otherwise it will keep intell link
  if [[ "$ARCH" == "arm64" ]]; then
      zoom_url="$zoom_arm64_url"
  fi
+
 
 install_applications(){
 install_application_from_url "$app_cleaner_url"
