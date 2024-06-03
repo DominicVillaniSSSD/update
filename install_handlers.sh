@@ -97,7 +97,7 @@ process_file() {
     elif [[ "$file" == *.app ]]; then
         move_app "$file"
     else
-        #echo -e "${RED}File $file is neither a .dmg, .pkg, .app, nor a .zip file.${NC}"
+        echo -e "${RED}File $file is neither a .dmg, .pkg, .app, nor a .zip file.${NC}"
     fi
 }
 
