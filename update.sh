@@ -50,13 +50,11 @@ install_application_from_url "$google_chrome_url"
 install_application_from_url "$air_server_url"
 install_application_from_url "$crisis_go"
 }
-install_application_from_url "$smart_notebook_url"
-#install_applications
+#install_application_from_url "$smart_notebook_url"
+install_applications
+
 print_finished
 
-#install_application_from_url "$zoom_url"
 # Clean up
-print_finished
-
 cd ..
 rm -rf $TEMP_DIR
