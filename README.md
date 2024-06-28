@@ -8,7 +8,7 @@ Then enter in the password in for the user you have just typed in
 curl -O https://raw.githubusercontent.com/DominicVillaniSSSD/update/main/update.sh && chmod +x update.sh && sudo ./update.sh
 ```
 
-This will update these apps:
+This will update these apps:  
 Zoom (latest release)  
 Chrome (latest release)  
 Google Drive (latest release)  
