@@ -9,12 +9,13 @@ curl -O https://raw.githubusercontent.com/DominicVillaniSSSD/update/main/update.
 ```
 
 This will update these apps:
-Zoom (latest release)
-Chrome (latest release)
-Google Drive (latest release)
-crisis go (latest release)
-Air server 7.2.7
-app_Cleaner 3.6.8
-crisis go 6.22.1
+Zoom (latest release)  
+Chrome (latest release)  
+Google Drive (latest release)  
+crisis go (latest release)  
+Air server 7.2.7  
+app_Cleaner 3.6.8  
+cannon_driver PS-v4.17.17  
+
 
 
