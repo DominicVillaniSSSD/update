@@ -6,7 +6,7 @@ su admin
 
 
 ```
-curl -O https://raw.githubusercontent.com/DominicVillaniSSSD/update/main/update.sh && chmod +x update.sh && ./update.sh
+curl -O https://raw.githubusercontent.com/DominicVillaniSSSD/update/main/update.sh && chmod +x update.sh && sudo ./update.sh
 ```
 
 This will update these apps:
