@@ -1,6 +1,8 @@
 To run put this command into the terminal with a user account with admin privileges /
 Or run su and the username of an admin user ex: su admin 
-
+a\ test
+b\ test2
+c
 
 
 ```
