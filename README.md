@@ -1,4 +1,6 @@
 To run put this command into the terminal with a user account with admin privileges
+Or run su and the username of an admin user ex ``` su admin ``` 
+
 
 ```
 curl -O https://raw.githubusercontent.com/DominicVillaniSSSD/update/main/update.sh && chmod +x update.sh && ./update.sh
