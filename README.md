@@ -18,5 +18,7 @@ Air server 7.2.7
 app_Cleaner 3.6.8  
 cannon_driver PS-v4.17.17  
 
+** Note this script is only validated to work in MacOS Monterey and up. Some of the Software included in this script is version specific and may need to be changed to work with older version of MacOS
+
 
 
