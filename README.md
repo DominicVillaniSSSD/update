@@ -13,6 +13,7 @@ Zoom (latest release)
 Chrome (latest release)  
 Google Drive (latest release)  
 crisis go (latest release)  
+smart_notebook 24.0.240.1
 Air server 7.2.7  
 app_Cleaner 3.6.8  
 cannon_driver PS-v4.17.17  
