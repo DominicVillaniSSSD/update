@@ -1,6 +1,7 @@
 To run this script paste the command below into the terminal with a user account with admin privileges  
 Or run su and the username of an admin user ex: su admin  
 Then enter in the password in for the user you have just typed in
+you will also need to type exit in the terminal once the script is complete 
 
 
 
