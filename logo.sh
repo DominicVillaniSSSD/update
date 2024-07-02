@@ -16,4 +16,3 @@ print_finished() {
   # echo -e "${RED}This text is red${NC}"
   echo -e "${BLUE}finished"
 }
-

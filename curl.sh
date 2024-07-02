@@ -35,6 +35,3 @@ install_application_from_url() {
         echo -e "${RED}Failed to download the application.${NC}"
     fi
 }
-
-
-

@@ -100,4 +100,3 @@ process_file() {
         echo -e "${RED}File $file is neither a .dmg, .pkg, .app, nor a .zip file.${NC}"
     fi
 }
-
