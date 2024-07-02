@@ -2,18 +2,18 @@
 source setup.sh
 source install_handlers.sh
 
+#Latest Release
 google_chrome_url="https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg"
 google_drive_url="https://dl.google.com/drive-file-stream/GoogleDrive.dmg"
-smart_notebook_url="https://downloads.smarttech.com/software/education/24.0/mac/24.0.238.0/smart24-0-web.dmg"
+crisis_go="https://crisisgoapp.s3.amazonaws.com/Mac/CrisisGo_latest.pkg"
 zoom_url="https://zoom.us/client/latest/Zoom.pkg"
-air_server_url="https://dl.airserver.com/mac/AirServer-7.2.7.dmg"
-app_cleaner_url="https://freemacsoft.net/downloads/AppCleaner_3.6.8.zip"
-crisis_go="https://crisisgoapp.s3.amazonaws.com/Mac/CrisisGo_6.22.1.pkg"
-
 # arm zoom link
 zoom_arm64_url="https://zoom.us/client/latest/Zoom.pkg?archType=arm64" 
 
-#cannon driver testing 
+#Version specific 
+smart_notebook_url="https://downloads.smarttech.com/software/education/24.0/mac/24.0.240.1/smart24-0-web.dmg"
+air_server_url="https://dl.airserver.com/mac/AirServer-7.2.7.dmg"
+app_cleaner_url="https://freemacsoft.net/downloads/AppCleaner_3.6.8.zip"
 cannon_driver="https://downloads.canon.com/bicg2024/drivers/PS-v4.17.17-Mac.zip"
 
 install_application_from_url() {

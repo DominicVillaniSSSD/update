@@ -33,17 +33,31 @@ check_architecture() {
     fi
 }
 
-# Check if the device is running macOS Ventura
+# Checks to see what version of macOS is running on the device
 check_macos_version() {
     OS_VERSION=$(sw_vers -productVersion)
-    if [[ "$OS_VERSION" == 13.* ]]; then
-        echo -e "${GREEN}Ventura${NC}"
+    if [[ "$OS_VERSION" == 14.* ]]; then
+        echo -e "${GREEN}You are running macOS Sonoma${NC}"
+    elif [[ "$OS_VERSION" == 13.* ]]; then
+        echo -e "${GREEN}You are running macOS Ventura${NC}"
     elif [[ "$OS_VERSION" == 12.* ]]; then
-        echo -e "${GREEN}Monterey${NC}"
+        echo -e "${GREEN}You are running macOS Monterey${NC}"
     elif [[ "$OS_VERSION" == 11.* ]]; then
-        echo -e "${GREEN}Big Sur${NC}"
+        echo -e "${GREEN}You are running macOS Big Sur wich is compatible with this script.${NC}"
+    elif [[ "$OS_VERSION" == 10.15.* ]]; then
+        echo -e "${GREEN}You are running macOS Catalina wich is compatible with this script.${NC}"
+    elif [[ "$OS_VERSION" == 10.14.* ]]; then
+        echo -e "${GREEN}You are running macOS Mojave wich is compatible with this script.${NC}"
+    elif [[ "$OS_VERSION" == 10.13.* ]]; then
+        echo -e "${GREEN}You are running macOS High Sierra wich is compatible with this script.${NC}"
+    elif [[ "$OS_VERSION" == 10.12.* ]]; then
+        echo -e "${GREEN}You are running macOS Sierra wich is compatible with this script.${NC}"
+    elif [[ "$OS_VERSION" == 10.11.* ]]; then
+        echo -e "${GREEN}You are running macOS El Capitan wich is compatible with this script.${NC}"
+    elif [[ "$OS_VERSION" == 10.10.* ]]; then
+        echo -e "${GREEN}You are running macOS Yosemite wich is compatible with this script.${NC}"
     else
-        echo -e "${YELLOW}Incompatible${NC}"
+        echo -e "${RED}You are running an incompatible version of macOS.${NC}"
     fi
 }
 
