@@ -2,6 +2,8 @@
 
 # Directory to store the scripts
 TEMP_DIR="/tmp/update-scripts"
+#delete the temp directory if it exists already so it will not cause errors
+rm -rf $TEMP_DIR
 
 # Ensure cleanup on exit
 trap 'rm -rf $TEMP_DIR' EXIT
