@@ -1,7 +1,7 @@
 #!/bin/bash
 source setup.sh
 print_logo() {
- sudo echo "
+echo -e "${BLUE}
   SSSSS    SSSSS   SSSSS    DDDDD  
  S     S  S     S  S     S  D    D 
  S        S        S        D     D
@@ -9,7 +9,7 @@ print_logo() {
        S        S        S  D     D
  S     S  S     S  S     S  D    D 
   SSSSS    SSSSS    SSSSS   DDDDD  
-"
+${NC}"
 }
 
 print_finished() {
