@@ -1,14 +1,25 @@
-To run put in this command into the terminal with a user account with admin privileges
+To run this script paste the command below into the terminal with a user account with admin privileges  
+Or run su and the username of an admin user ex: su admin  
+Then enter in the password in for the user you have just typed in
+you will also need to type exit in the terminal once the script is complete 
+
+
 
 ```
-curl -O https://raw.githubusercontent.com/DominicVillaniSSSD/update/test/update.sh && chmod +x update.sh && ./update.sh
+curl -O https://raw.githubusercontent.com/DominicVillaniSSSD/update/main/update.sh && chmod +x update.sh && sudo ./update.sh
 ```
 
-This will update these apps from these sources:
-google_chrome_url="https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg"
-google_drive_url="https://dl.google.com/drive-file-stream/GoogleDrive.dmg"
-smart_notebook_url="https://downloads.smarttech.com/software/education/23.2/mac/23.2.278.0/smart23-2-web.dmg"
-zoom_url="https://zoom.us/client/latest/Zoom.pkg"
-air_server_url="https://dl.airserver.com/mac/AirServer-7.2.7.dmg"
-app_cleaner_url="https://freemacsoft.net/downloads/AppCleaner_3.6.8.zip"
+This will update these apps:  
+Zoom (latest release)  
+Chrome (latest release)  
+Google Drive (latest release)  
+crisis go (latest release)  
+smart_notebook 24.0.240.1
+Air server 7.2.7  
+app_Cleaner 3.6.8  
+cannon_driver PS-v4.17.17  
+
+** Note this script is only validated to work in MacOS Monterey and up. Some of the Software included in this script is version specific and may need to be changed to work with older version of MacOS
+
+
 
