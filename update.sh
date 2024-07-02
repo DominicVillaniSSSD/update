@@ -1,7 +1,12 @@
 #!/bin/bash
-# Directory to store the scripts
 
+# Directory to store the scripts
 TEMP_DIR="/tmp/update-scripts"
+#delete the temp directory if it exists already so it will not cause errors
+rm -rf $TEMP_DIR
+
+# Ensure cleanup on exit
+trap 'rm -rf $TEMP_DIR' EXIT
 
 # Create a temporary directory
 mkdir -p $TEMP_DIR
@@ -15,22 +20,19 @@ curl -L -o curl.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$
 curl -L -o install_handlers.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/install_handlers.sh
 curl -L -o logo.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/logo.sh
 curl -L -o setup.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/setup.sh
-# Add more curl commands for additional scripts as needed
 
-# Make the scripts executable
-chmod +x curl.sh install_handlers.sh logo.sh setup.sh
+source setup.sh
+source install_handlers.sh
+source curl.sh
+source logo.sh
 
-# Source or execute the downloaded scripts as needed
-source ./curl.sh
-source ./install_handlers.sh
-source ./logo.sh
-source ./setup.sh
-# Or use `./script1.sh` and `./script2.sh` if they should be executed in a subshell
+check_macos_version
 
-# source setup.sh
-# source install_handlers.sh
-# source curl.sh
-# source logo.sh
+OS_VERSION=$(sw_vers -productVersion)
+if [[ "$OS_VERSION" < "12.0" ]]; then
+    echo -e "${RED}macOS version is less than 12.0 (Monterey). Exiting script.${NC}"
+    exit 1
+fi
 
 #Prints logo
 print_logo
@@ -53,7 +55,6 @@ install_application_from_url "$air_server_url"
 install_application_from_url "$crisis_go"
 install_application_from_url "$cannon_driver"
 }
-
 install_applications
 
 print_finished
@@ -61,3 +62,5 @@ print_finished
 # Clean up
 cd ..
 rm -rf $TEMP_DIR
+
+
