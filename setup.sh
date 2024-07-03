@@ -43,19 +43,19 @@ check_macos_version() {
     elif [[ "$OS_VERSION" == 12.* ]]; then
         echo -e "${GREEN}You are running macOS Monterey${NC}"
     elif [[ "$OS_VERSION" == 11.* ]]; then
-        echo -e "${GREEN}You are running macOS Big Sur wich is compatible with this script.${NC}"
+        echo -e "${RED}You are running macOS Big Sur wich isn't compatible with this script.${NC}"
     elif [[ "$OS_VERSION" == 10.15.* ]]; then
-        echo -e "${GREEN}You are running macOS Catalina wich is compatible with this script.${NC}"
+        echo -e "${RED}You are running macOS Catalina wich isn't compatible with this script.${NC}"
     elif [[ "$OS_VERSION" == 10.14.* ]]; then
-        echo -e "${GREEN}You are running macOS Mojave wich is compatible with this script.${NC}"
+        echo -e "${RED}You are running macOS Mojave wich isn't compatible with this script.${NC}"
     elif [[ "$OS_VERSION" == 10.13.* ]]; then
-        echo -e "${GREEN}You are running macOS High Sierra wich is compatible with this script.${NC}"
+        echo -e "${RED}You are running macOS High Sierra wich isn't compatible with this script.${NC}"
     elif [[ "$OS_VERSION" == 10.12.* ]]; then
-        echo -e "${GREEN}You are running macOS Sierra wich is compatible with this script.${NC}"
+        echo -e "${RED}You are running macOS Sierra wich isn't compatible with this script.${NC}"
     elif [[ "$OS_VERSION" == 10.11.* ]]; then
-        echo -e "${GREEN}You are running macOS El Capitan wich is compatible with this script.${NC}"
+        echo -e "${RED}You are running macOS El Capitan wich isn't compatible with this script.${NC}"
     elif [[ "$OS_VERSION" == 10.10.* ]]; then
-        echo -e "${GREEN}You are running macOS Yosemite wich is compatible with this script.${NC}"
+        echo -e "${RED}You are running macOS Yosemite wich isn't compatible with this script.${NC}"
     else
         echo -e "${RED}You are running an incompatible version of macOS.${NC}"
     fi
