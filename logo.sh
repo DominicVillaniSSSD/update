@@ -13,6 +13,15 @@ ${NC}"
 }
 
 print_finished() {
-  # echo -e "${RED}This text is red${NC}"
-  echo -e "${BLUE}finished"
+    echo -e "${BLUE}"
+    cat << 'EOF'
+  ______ _       _     _              _
+ |  ____(_)     (_)   | |            | |
+ | |__   _ _ __  _ ___| |__   ___  __| |
+ |  __| | | '_ \| / __| '_ \ / _ \/ _` |
+ | |    | | | | | \__ \ | | |  __/ (_| |
+ |_|    |_|_| |_|_|___/_| |_|\___|\__,_|
+
+EOF
+    echo -e "${NC}"  # Reset text color to default
 }
