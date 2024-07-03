@@ -59,7 +59,9 @@ install_application_from_url "$air_server_url"
 install_application_from_url "$crisis_go"
 install_application_from_url "$cannon_driver"
 }
-install_applications
+#install_applications
+set_microsoft_word_version
+install_application_from_url "$Microsoft_Word_url"
 
 print_finished
 

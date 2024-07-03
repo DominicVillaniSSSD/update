@@ -17,6 +17,26 @@ air_server_url="https://dl.airserver.com/mac/AirServer-7.2.7.dmg"
 app_cleaner_url="https://freemacsoft.net/downloads/AppCleaner_3.6.8.zip"
 cannon_driver="https://downloads.canon.com/bicg2024/drivers/PS-v4.17.17-Mac.zip"
 
+Microsoft_Word_url=https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_Word_$version_Installer.pkg
+
+set_microsoft_word_version() {
+    if [[ "$OS_VERSION" == "10.15.*" ]]; then
+        version="16.66.22101101"
+        sha256="5a6a75d9a5b46cceeff5a1b7925c0eab6e4976cba529149b7b291a0355e7a7c9"
+        livecheck_skip="Legacy version"
+    elif [[ "$OS_VERSION" == "11.*" ]]; then
+        version="16.77.23091703"
+        sha256="10c8db978206275a557faf3650763a656b1f7170c9b2a65fa6fdce220bd23066"
+        livecheck_skip="Legacy version"
+    elif [[ "$OS_VERSION" == "12.*" || "$OS_VERSION" > "12.*" ]]; then
+        version="16.86.24060916"
+        sha256="e84da3bf72fad24b551d5d6589ee2edb440cf9ea7d173ad38ad00314f85fc0d7"
+        livecheck_url="https://go.microsoft.com/fwlink/p/?linkid=525134"
+        livecheck_strategy="header_match"
+    fi
+}
+
+
 install_application_from_url() {
     local app_url=$1
     local file_name=$(basename "${app_url%%\?*}")  # Strip query parameters from the URL
