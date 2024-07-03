@@ -10,7 +10,7 @@ you will also need to type exit in the terminal once the script is complete
 
 
 ```
-curl -O https://raw.githubusercontent.com/DominicVillaniSSSD/update/test/update.sh && chmod +x update.sh && sudo ./update.sh
+curl -O https://raw.githubusercontent.com/DominicVillaniSSSD/update/main/update.sh && chmod +x update.sh && sudo ./update.sh
 ```
 
 ### **This will update these apps:**  
