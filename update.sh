@@ -13,7 +13,7 @@ mkdir -p $TEMP_DIR
 cd $TEMP_DIR
 
 # Set the branch
-branch="test"
+branch="main"
 
 # Download necessary scripts
 curl -L -o curl.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/curl.sh
@@ -59,7 +59,7 @@ install_application_from_url "$air_server_url"
 install_application_from_url "$crisis_go"
 install_application_from_url "$cannon_driver"
 }
-#install_applications
+install_applications
 
 print_finished
 
