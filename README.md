@@ -1,4 +1,4 @@
-# Update tool for Mac Applications in the Sulpher Springs School District 
+# Update tool for Mac Applications at the Sulpher Springs School District 
 This Tool will not update the OS version just a handfull of apps that are listed bellow 
 
 ## How to run:
