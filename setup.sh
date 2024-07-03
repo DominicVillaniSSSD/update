@@ -43,9 +43,9 @@ check_macos_version() {
     elif [[ "$OS_VERSION" == 12.* ]]; then
         echo -e "${GREEN}You are running macOS Monterey${NC}"
     elif [[ "$OS_VERSION" == 11.* ]]; then
-        echo -e "${RED}You are running macOS Big Sur wich isn't compatible with this script.${NC}"
+        echo -e "${RED}You are running macOS Big Sur${NC}"
     elif [[ "$OS_VERSION" == 10.15.* ]]; then
-        echo -e "${RED}You are running macOS Catalina wich isn't compatible with this script.${NC}"
+        echo -e "${RED}You are running macOS Catalina${NC}"
     elif [[ "$OS_VERSION" == 10.14.* ]]; then
         echo -e "${RED}You are running macOS Mojave wich isn't compatible with this script.${NC}"
     elif [[ "$OS_VERSION" == 10.13.* ]]; then

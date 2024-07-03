@@ -12,6 +12,7 @@ zoom_arm64_url="https://zoom.us/client/latest/Zoom.pkg?archType=arm64"
 
 #Version specific 
 smart_notebook_url="https://downloads.smarttech.com/software/education/24.0/mac/24.0.240.1/smart24-0-web.dmg"
+smart_notebook22_1_url="https://downloads.smarttech.com/software/education/22.1/mac/22.1.496.0/smart22-1-web.dmg"
 air_server_url="https://dl.airserver.com/mac/AirServer-7.2.7.dmg"
 app_cleaner_url="https://freemacsoft.net/downloads/AppCleaner_3.6.8.zip"
 cannon_driver="https://downloads.canon.com/bicg2024/drivers/PS-v4.17.17-Mac.zip"

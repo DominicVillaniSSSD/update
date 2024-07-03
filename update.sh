@@ -13,7 +13,7 @@ mkdir -p $TEMP_DIR
 cd $TEMP_DIR
 
 # Set the branch
-branch="main"
+branch="test"
 
 # Download necessary scripts
 curl -L -o curl.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/curl.sh
@@ -29,8 +29,8 @@ source logo.sh
 check_macos_version
 
 OS_VERSION=$(sw_vers -productVersion)
-if [[ "$OS_VERSION" < "12.0" ]]; then
-    echo -e "${RED}macOS version is less than 12.0 (Monterey). Exiting script.${NC}"
+if [[ "$OS_VERSION" < "10.15.0" ]]; then
+    echo -e "${RED}macOS version is less than 12.0 (Catalina). Exiting script.${NC}"
     exit 1
 fi
 
@@ -43,6 +43,10 @@ check_architecture
 #sets zoom_url to zoom_arm64_url if cpu is arm otherwise it will keep intell link
  if [[ "$ARCH" == "arm64" ]]; then
      zoom_url="$zoom_arm64_url"
+ fi
+ #sets smart notebook url to smart_notebook22.1_url if os version is 11-10.15
+ if [[ "$OS_VERSION" == 11.* || "$OS_VERSION" == 10.15.* ]]; then
+     smart_notebook_url="$smart_notebook22_1_url"
  fi
 
 
