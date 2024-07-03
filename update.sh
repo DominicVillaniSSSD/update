@@ -44,6 +44,10 @@ check_architecture
  if [[ "$ARCH" == "arm64" ]]; then
      zoom_url="$zoom_arm64_url"
  fi
+ #sets smart notebook url to smart_notebook22.1_url if os version is 11-10.15
+ if [[ "$OS_VERSION" == 11.* || "$OS_VERSION" == 10.15.* ]]; then
+     smart_notebook_url="$smart_notebook22.1_url"
+ fi
 
 
 install_applications(){
