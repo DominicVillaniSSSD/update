@@ -29,7 +29,7 @@ source logo.sh
 check_macos_version
 
 OS_VERSION=$(sw_vers -productVersion)
-if [[ "$OS_VERSION" < "12.0" ]]; then
+if [[ "$OS_VERSION" < "10.15.0" ]]; then
     echo -e "${RED}macOS version is less than 12.0 (Monterey). Exiting script.${NC}"
     exit 1
 fi
