@@ -23,7 +23,9 @@ Air server 7.2.7
 app_Cleaner 3.6.8  
 cannon_driver PS-v4.17.17  
 smart_notebook 24.0.240.1 (For newer MacOS versions) or  
-smart_notebook 21.1m (For older MacOS Versions [Big Sur, Catalina])  
+smart_notebook 21.1 (For older MacOS Versions [Big Sur, Catalina])  
 
 
-## *Note this script is only validated to work in MacOS Catalina and up. Some of the Software included in this script is version specific and may need to be changed to work with older version of MacOS
+## *Note this script is only validated to work in MacOS Catalina and up. Some of the Software included in this script is version specific and may need to be changed to work with older version of MacOS.  
+
+This Project is open free and open source feel free to fork or redistribute
