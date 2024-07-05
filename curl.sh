@@ -17,11 +17,7 @@ air_server_url="https://dl.airserver.com/mac/AirServer-7.2.7.dmg"
 app_cleaner_url="https://freemacsoft.net/downloads/AppCleaner_3.6.8.zip"
 cannon_driver_url="https://downloads.canon.com/bicg2024/drivers/PS-v4.17.17-Mac.zip"
 
-#Microsoft_Word_url="https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_Word_16.86.24060916_Installer.pkg"
-
-Microsoft_Word_url="https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_Word_$version_Installer.pkg"
-
-set_microsoft_word_version() {
+set_microsoft_office_version() {
     if [[ "$OS_VERSION" == "10.15.*" ]]; then
         version="16.66.22101101"
         sha256="5a6a75d9a5b46cceeff5a1b7925c0eab6e4976cba529149b7b291a0355e7a7c9"
@@ -36,24 +32,27 @@ set_microsoft_word_version() {
         livecheck_url="https://go.microsoft.com/fwlink/p/?linkid=525134"
         livecheck_strategy="header_match"
     fi
-}
 
+    Microsoft_Word_url="https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_Word_${version}_Installer.pkg"
+    Microsoft_Excel_url="https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_Excel_${version}_Installer.pkg"
+    Microsoft_PowerPoint_url="https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_PowerPoint_${version}_Installer.pkg"
+}
 
 install_application_from_url() {
     local app_url=$1
     local file_name=$(basename "${app_url%%\?*}")  # Strip query parameters from the URL
-    local temp_file="/tmp/$file_name"
+    echo "$file_name"
 
     echo -e "${YELLOW}Downloading application from URL: $app_url...${NC}"
-    curl -L -o "$temp_file" "$app_url"
+    curl -L -O "$app_url"  # Use -O option to save with the remote name
 
-    if [[ -f "$temp_file" ]]; then
+    if [[ -f "$file_name" ]]; then  # Check if the file with remote name exists
         echo -e "${GREEN}Download successful. Installing application...${NC}"
-        process_file "$temp_file"
-        if [[ "$temp_file" == *.zip ]]; then
-            rm -r "/tmp/$(basename "$temp_file" .zip)"  # Remove unzipped directory
+        process_file "$file_name"
+        if [[ "$file_name" == *.zip ]]; then
+            rm -r "/tmp/$(basename "$file_name" .zip)"  # Remove unzipped directory
         fi
-        rm "$temp_file"  # Remove the original downloaded file
+        rm "$file_name"  # Remove the original downloaded file
     else
         echo -e "${RED}Failed to download the application.${NC}"
     fi

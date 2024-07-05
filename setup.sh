@@ -60,4 +60,3 @@ check_macos_version() {
         echo -e "${RED}You are running an incompatible version of macOS.${NC}"
     fi
 }
-
