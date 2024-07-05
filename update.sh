@@ -61,7 +61,7 @@ install_application_from_url "$cannon_driver_url"
 }
 #install_applications
 #set_microsoft_word_version
-install_application_from_url "$Microsoft_Word_url"
+install_application_from_url "https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_Word_16.86.24060916_Installer.pkg"
 
 print_finished
 
