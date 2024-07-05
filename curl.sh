@@ -38,6 +38,27 @@ set_microsoft_office_version() {
     Microsoft_PowerPoint_url="https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_PowerPoint_${version}_Installer.pkg"
 }
 
+set_onyx_version_and_url() {
+    if [[ "$OS_VERSION" == "10.15.*" ]]; then
+        version="3.8.7"
+        onyx_url="https://www.titanium-software.fr/download/1015/OnyX.dmg"
+    elif [[ "$OS_VERSION" == "11.*" ]]; then
+        version="4.0.2"
+        onyx_url="https://www.titanium-software.fr/download/11/OnyX.dmg"
+    elif [[ "$OS_VERSION" == "12.*" ]]; then
+        version="4.2.7"
+        onyx_url="https://www.titanium-software.fr/download/12/OnyX.dmg"
+    elif [[ "$OS_VERSION" == "13.*" ]]; then
+        version="4.4.7"
+        onyx_url="https://www.titanium-software.fr/download/13/OnyX.dmg"
+    elif [[ "$OS_VERSION" == "14.*" || "$OS_VERSION" > "14.*" ]]; then
+        version="4.5.9"
+        onyx_url="https://www.titanium-software.fr/download/14/OnyX.dmg"
+    fi
+}
+
+set_onyx_version_and_url
+
 install_application_from_url() {
     local app_url=$1
     local file_name=$(basename "${app_url%%\?*}")  # Strip query parameters from the URL
