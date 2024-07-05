@@ -19,7 +19,7 @@ cannon_driver_url="https://downloads.canon.com/bicg2024/drivers/PS-v4.17.17-Mac.
 
 #Microsoft_Word_url="https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_Word_16.86.24060916_Installer.pkg"
 
-Microsoft_Word_url=https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_Word_$version_Installer.pkg
+Microsoft_Word_url="https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_Word_$version_Installer.pkg"
 
 set_microsoft_word_version() {
     if [[ "$OS_VERSION" == "10.15.*" ]]; then
