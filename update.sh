@@ -60,7 +60,7 @@ install_application_from_url "$crisis_go"
 install_application_from_url "$cannon_driver_url"
 }
 #install_applications
-#set_microsoft_word_version
+set_microsoft_word_version
 install_application_from_url "$Microsoft_Word_url"
 
 print_finished
