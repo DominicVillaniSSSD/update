@@ -39,6 +39,7 @@ set_microsoft_office_version() {
 }
 
 set_onyx_version_and_url() {
+ echo "OS_VERSION: $OS_VERSION"  # Debug statement to print OS_VERSION
     if [[ "$OS_VERSION" == "10.15.*" ]]; then
         version="3.8.7"
         onyx_url="https://www.titanium-software.fr/download/1015/OnyX.dmg"
@@ -55,6 +56,8 @@ set_onyx_version_and_url() {
         version="4.5.9"
         onyx_url="https://www.titanium-software.fr/download/14/OnyX.dmg"
     fi
+
+    echo "OnyX URL: $onyx_url"  # Debug statement to print the selected URL
 }
 
 set_onyx_version_and_url
