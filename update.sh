@@ -72,7 +72,7 @@ install_application_from_url "$google_chrome_url"
 #install_applications
 
 echo "$onyx_url"
-install_application_from_url "$onyx_url"
+#install_application_from_url "$onyx_url"
 
 print_finished
 
