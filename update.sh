@@ -74,7 +74,7 @@ echo "hii"
 echo "$&onyx_url"
 install_application_from_url "$onyx_url"
 echo "$Microsoft_Word_url"
-install_application_from_url "$onyx_url"
+install_application_from_url "$Microsoft_Word_url"
 
 print_finished
 
