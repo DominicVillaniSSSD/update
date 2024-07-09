@@ -56,6 +56,7 @@ set_microsoft_office_version
 set_onyx_version_and_url
 
 install_applications(){
+install_application_from_url "$onyx_url"
 install_application_from_url "$app_cleaner_url"
 install_application_from_url "$zoom_url"
 install_application_from_url "$smart_notebook_url"
@@ -64,17 +65,11 @@ install_application_from_url "$Microsoft_Excel_url"
 install_application_from_url "$Microsoft_PowerPoint_url"
 install_application_from_url "$air_server_url"
 install_application_from_url "$crisis_go"
-install_application_from_url "$onyx_url"
 install_application_from_url "$cannon_driver_url"
 install_application_from_url "$google_chrome_url"
 }
 
-#install_applications
-echo "hii"
-echo "$&onyx_url"
-install_application_from_url "$onyx_url"
-echo "$Microsoft_Word_url"
-install_application_from_url "$Microsoft_Word_url"
+install_applications
 
 print_finished
 
