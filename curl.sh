@@ -18,15 +18,15 @@ app_cleaner_url="https://freemacsoft.net/downloads/AppCleaner_3.6.8.zip"
 cannon_driver_url="https://downloads.canon.com/bicg2024/drivers/PS-v4.17.17-Mac.zip"
 
 set_microsoft_office_version() {
-    if [[ "$OS_VERSION" == "10.15.*" ]]; then
+    if [[ "$OS_VERSION" =~ ^10\.15\..* ]]; then
         version="16.66.22101101"
         sha256="5a6a75d9a5b46cceeff5a1b7925c0eab6e4976cba529149b7b291a0355e7a7c9"
         livecheck_skip="Legacy version"
-    elif [[ "$OS_VERSION" == "11.*" ]]; then
+    elif [[ "$OS_VERSION" =~ ^11\..* ]]; then
         version="16.77.23091703"
         sha256="10c8db978206275a557faf3650763a656b1f7170c9b2a65fa6fdce220bd23066"
         livecheck_skip="Legacy version"
-    elif [[ "$OS_VERSION" == "12.*" || "$OS_VERSION" > "12.*" ]]; then
+    elif [[ "$OS_VERSION" =~ ^12\..* || "$OS_VERSION" > "12.*" ]]; then
         version="16.86.24060916"
         sha256="e84da3bf72fad24b551d5d6589ee2edb440cf9ea7d173ad38ad00314f85fc0d7"
         livecheck_url="https://go.microsoft.com/fwlink/p/?linkid=525134"
