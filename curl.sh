@@ -39,20 +39,20 @@ set_microsoft_office_version() {
 }
 
 set_onyx_version_and_url() {
- echo "OS_VERSION: $OS_VERSION"  # Debug statement to print OS_VERSION
-    if [[ "$OS_VERSION" == "10.15.*" ]]; then
+    echo "OS_VERSION: $OS_VERSION"  # Debug statement to print OS_VERSION
+    if [[ "$OS_VERSION" =~ ^10\.15\..* ]]; then
         version="3.8.7"
         onyx_url="https://www.titanium-software.fr/download/1015/OnyX.dmg"
-    elif [[ "$OS_VERSION" == "11.*" ]]; then
+    elif [[ "$OS_VERSION" =~ ^11\..* ]]; then
         version="4.0.2"
         onyx_url="https://www.titanium-software.fr/download/11/OnyX.dmg"
-    elif [[ "$OS_VERSION" == "12.*" ]]; then
+    elif [[ "$OS_VERSION" =~ ^12\..* ]]; then
         version="4.2.7"
         onyx_url="https://www.titanium-software.fr/download/12/OnyX.dmg"
-    elif [[ "$OS_VERSION" == "13.*" ]]; then
+    elif [[ "$OS_VERSION" =~ ^13\..* ]]; then
         version="4.4.7"
         onyx_url="https://www.titanium-software.fr/download/13/OnyX.dmg"
-    elif [[ "$OS_VERSION" == "14.*" || "$OS_VERSION" > "14.*" ]]; then
+    elif [[ "$OS_VERSION" =~ ^14\..* || "$OS_VERSION" > "14.*" ]]; then
         version="4.5.9"
         onyx_url="https://www.titanium-software.fr/download/14/OnyX.dmg"
     fi
@@ -60,7 +60,6 @@ set_onyx_version_and_url() {
     echo "OnyX URL: $onyx_url"  # Debug statement to print the selected URL
 }
 
-set_onyx_version_and_url
 
 install_application_from_url() {
     local app_url=$1
