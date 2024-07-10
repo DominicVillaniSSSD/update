@@ -69,12 +69,7 @@ install_application_from_url "$cannon_driver_url"
 install_application_from_url "$google_chrome_url"
 }
 
-#install_applications
-echo "hii"
-echo "$&onyx_url"
-install_application_from_url "$onyx_url"
-echo "$Microsoft_Word_url"
-install_application_from_url "$Microsoft_Word_url"
+install_applications
 
 print_finished
 
