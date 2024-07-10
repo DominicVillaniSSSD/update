@@ -13,7 +13,7 @@ mkdir -p $TEMP_DIR
 cd $TEMP_DIR
 
 # Set the branch
-branch="test"
+branch="dev"
 
 # Download necessary scripts
 curl -L -o curl.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/curl.sh
