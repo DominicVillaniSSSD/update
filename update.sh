@@ -75,6 +75,7 @@ install_applications(){
     wait
 }
 
+install_applications
 
 print_finished
 
