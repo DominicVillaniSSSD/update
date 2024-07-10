@@ -20,6 +20,13 @@ curl -L -o curl.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$
 curl -L -o install_handlers.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/install_handlers.sh
 curl -L -o logo.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/logo.sh
 curl -L -o setup.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/setup.sh
+curl -L -o curl.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/curl.sh > curl.log 2>&1 &
+curl -L -o install_handlers.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/install_handlers.sh > install_handlers.log 2>&1 &
+curl -L -o logo.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/logo.sh > logo.log 2>&1 &
+curl -L -o setup.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/setup.sh > setup.log 2>&1 &
+
+# Wait for all downloads to complete
+wait
 
 source setup.sh
 source install_handlers.sh
@@ -67,9 +74,22 @@ install_application_from_url "$crisis_go"
 install_application_from_url "$onyx_url"
 install_application_from_url "$cannon_driver_url"
 install_application_from_url "$google_chrome_url"
+    install_application_from_url "$app_cleaner_url" > app_cleaner.log 2>&1 && echo "App Cleaner installed successfully." || echo "Failed to install App Cleaner." &
+    install_application_from_url "$zoom_url" > zoom.log 2>&1 && echo "Zoom installed successfully." || echo "Failed to install Zoom." &
+    install_application_from_url "$smart_notebook_url" > smart_notebook.log 2>&1 && echo "Smart Notebook installed successfully." || echo "Failed to install Smart Notebook." &
+    install_application_from_url "$Microsoft_Word_url" > word.log 2>&1 && echo "Microsoft Word installed successfully." || echo "Failed to install Microsoft Word." &
+    install_application_from_url "$Microsoft_Excel_url" > excel.log 2>&1 && echo "Microsoft Excel installed successfully." || echo "Failed to install Microsoft Excel." &
+    install_application_from_url "$Microsoft_PowerPoint_url" > powerpoint.log 2>&1 && echo "Microsoft PowerPoint installed successfully." || echo "Failed to install Microsoft PowerPoint." &
+    install_application_from_url "$air_server_url" > air_server.log 2>&1 && echo "Air Server installed successfully." || echo "Failed to install Air Server." &
+    install_application_from_url "$crisis_go" > crisis_go.log 2>&1 && echo "Crisis Go installed successfully." || echo "Failed to install Crisis Go." &
+    install_application_from_url "$onyx_url" > onyx.log 2>&1 && echo "Onyx installed successfully." || echo "Failed to install Onyx." &
+    install_application_from_url "$cannon_driver_url" > cannon_driver.log 2>&1 && echo "Cannon Driver installed successfully." || echo "Failed to install Cannon Driver." &
+    install_application_from_url "$google_chrome_url" > google_chrome.log 2>&1 && echo "Google Chrome installed successfully." || echo "Failed to install Google Chrome." &
+    
+    # Wait for all installations to complete
+    wait
 }
 
-install_applications
 
 print_finished
 
