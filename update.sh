@@ -16,10 +16,6 @@ cd $TEMP_DIR
 branch="test"
 
 # Download necessary scripts
-curl -L -o curl.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/curl.sh
-curl -L -o install_handlers.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/install_handlers.sh
-curl -L -o logo.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/logo.sh
-curl -L -o setup.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/setup.sh
 curl -L -o curl.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/curl.sh > curl.log 2>&1 &
 curl -L -o install_handlers.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/install_handlers.sh > install_handlers.log 2>&1 &
 curl -L -o logo.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/logo.sh > logo.log 2>&1 &
@@ -63,17 +59,6 @@ set_microsoft_office_version
 set_onyx_version_and_url
 
 install_applications(){
-install_application_from_url "$app_cleaner_url"
-install_application_from_url "$zoom_url"
-install_application_from_url "$smart_notebook_url"
-install_application_from_url "$Microsoft_Word_url"
-install_application_from_url "$Microsoft_Excel_url"
-install_application_from_url "$Microsoft_PowerPoint_url"
-install_application_from_url "$air_server_url"
-install_application_from_url "$crisis_go"
-install_application_from_url "$onyx_url"
-install_application_from_url "$cannon_driver_url"
-install_application_from_url "$google_chrome_url"
     install_application_from_url "$app_cleaner_url" > app_cleaner.log 2>&1 && echo "App Cleaner installed successfully." || echo "Failed to install App Cleaner." &
     install_application_from_url "$zoom_url" > zoom.log 2>&1 && echo "Zoom installed successfully." || echo "Failed to install Zoom." &
     install_application_from_url "$smart_notebook_url" > smart_notebook.log 2>&1 && echo "Smart Notebook installed successfully." || echo "Failed to install Smart Notebook." &
