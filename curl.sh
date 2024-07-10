@@ -56,8 +56,6 @@ set_onyx_version_and_url() {
         version="4.5.9"
         onyx_url="https://www.titanium-software.fr/download/14/OnyX.dmg"
     fi
-
-    echo "OnyX URL: $onyx_url"  # Debug statement to print the selected URL
 }
 
 
