@@ -31,6 +31,7 @@ source logo.sh
 
 check_macos_version
 
+#checks to see if macos version is over catalina if not it will exit 
 OS_VERSION=$(sw_vers -productVersion)
 if [[ "$OS_VERSION" < "10.15.0" ]]; then
     echo -e "${RED}macOS version is less than 12.0 (Catalina). Exiting script.${NC}"
@@ -53,6 +54,8 @@ set_zoom_version
 #sets smart notebook version
 set_smart_notebook_version
 
+#cd $TEMP_DIR
+
 install_applications(){
     install_application_from_url "$app_cleaner_url" > app_cleaner.log 2>&1 && echo -e "${GREEN}App Cleaner installed successfully.${NC}" || echo -e "${RED}Failed to install App Cleaner.${NC}" &
     install_application_from_url "$zoom_url" > zoom.log 2>&1 && echo -e "${GREEN}Zoom installed successfully.${NC}" || echo -e "${RED}Failed to install Zoom.${NC}" &
@@ -70,8 +73,6 @@ install_applications(){
     wait
 }
 
-#install_applications
-
 #dubugging
 echo "Microsoft Word URL: $Microsoft_Word_url"
 echo "Microsoft Excel URL: $Microsoft_Excel_url"
@@ -79,6 +80,8 @@ echo "Microsoft PowerPoint URL: $Microsoft_PowerPoint_url"
 echo "Zoom URL: $zoom_url"
 echo "Smart Notebook URL: $smart_notebook_url"
 echo "Onyx URL: $onyx_url"
+
+install_applications
 
 print_finished
 
