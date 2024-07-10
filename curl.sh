@@ -38,7 +38,7 @@ set_microsoft_office_version() {
     Microsoft_PowerPoint_url="https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_PowerPoint_${version}_Installer.pkg"
 }
 
-set_onyx_version_and_url() {
+set_onyx_version() {
     echo "OS_VERSION: $OS_VERSION"  # Debug statement to print OS_VERSION
     if [[ "$OS_VERSION" =~ ^10\.15\..* ]]; then
         version="3.8.7"
@@ -60,6 +60,19 @@ set_onyx_version_and_url() {
     echo "OnyX URL: $onyx_url"  # Debug statement to print the selected URL
 }
 
+set_zoom_version() {
+    #sets zoom_url to zoom_arm64_url if cpu is arm otherwise it will keep intell link
+ if [[ "$ARCH" == "arm64" ]]; then
+     zoom_url="$zoom_arm64_url"
+ fi
+}
+
+set_smart_notebook_version() {
+#sets smart notebook url to smart_notebook22.1_url if os version is 11-10.15
+ if [[ "$OS_VERSION" == 11.* || "$OS_VERSION" == 10.15.* ]]; then
+     smart_notebook_url="$smart_notebook22_1_url"
+ fi
+}
 
 install_application_from_url() {
     local app_url=$1

@@ -40,42 +40,45 @@ fi
 #Prints logo
 print_logo
 echo "this is the $branch branch"
+
 #Checks architecture
 check_architecture
 
-#sets zoom_url to zoom_arm64_url if cpu is arm otherwise it will keep intell link
- if [[ "$ARCH" == "arm64" ]]; then
-     zoom_url="$zoom_arm64_url"
- fi
- #sets smart notebook url to smart_notebook22.1_url if os version is 11-10.15
- if [[ "$OS_VERSION" == 11.* || "$OS_VERSION" == 10.15.* ]]; then
-     smart_notebook_url="$smart_notebook22_1_url"
- fi
-
 #sets office version
 set_microsoft_office_version
-
 #sets onyx version and url
-set_onyx_version_and_url
+set_onyx_version
+#sets zoom version
+set_zoom_version
+#sets smart notebook version
+set_smart_notebook_version
 
 install_applications(){
-    install_application_from_url "$app_cleaner_url" > app_cleaner.log 2>&1 && echo "App Cleaner installed successfully." || echo "Failed to install App Cleaner." &
-    install_application_from_url "$zoom_url" > zoom.log 2>&1 && echo "Zoom installed successfully." || echo "Failed to install Zoom." &
-    install_application_from_url "$smart_notebook_url" > smart_notebook.log 2>&1 && echo "Smart Notebook installed successfully." || echo "Failed to install Smart Notebook." &
-    install_application_from_url "$Microsoft_Word_url" > word.log 2>&1 && echo "Microsoft Word installed successfully." || echo "Failed to install Microsoft Word." &
-    install_application_from_url "$Microsoft_Excel_url" > excel.log 2>&1 && echo "Microsoft Excel installed successfully." || echo "Failed to install Microsoft Excel." &
-    install_application_from_url "$Microsoft_PowerPoint_url" > powerpoint.log 2>&1 && echo "Microsoft PowerPoint installed successfully." || echo "Failed to install Microsoft PowerPoint." &
-    install_application_from_url "$air_server_url" > air_server.log 2>&1 && echo "Air Server installed successfully." || echo "Failed to install Air Server." &
-    install_application_from_url "$crisis_go" > crisis_go.log 2>&1 && echo "Crisis Go installed successfully." || echo "Failed to install Crisis Go." &
-    install_application_from_url "$onyx_url" > onyx.log 2>&1 && echo "Onyx installed successfully." || echo "Failed to install Onyx." &
-    install_application_from_url "$cannon_driver_url" > cannon_driver.log 2>&1 && echo "Cannon Driver installed successfully." || echo "Failed to install Cannon Driver." &
-    install_application_from_url "$google_chrome_url" > google_chrome.log 2>&1 && echo "Google Chrome installed successfully." || echo "Failed to install Google Chrome." &
+    install_application_from_url "$app_cleaner_url" > app_cleaner.log 2>&1 && echo -e "${GREEN}App Cleaner installed successfully.${NC}" || echo -e "${RED}Failed to install App Cleaner.${NC}" &
+    install_application_from_url "$zoom_url" > zoom.log 2>&1 && echo -e "${GREEN}Zoom installed successfully.${NC}" || echo -e "${RED}Failed to install Zoom.${NC}" &
+    install_application_from_url "$smart_notebook_url" > smart_notebook.log 2>&1 && echo -e "${GREEN}Smart Notebook installed successfully.${NC}" || echo -e "${RED}Failed to install Smart Notebook.${NC}" &
+    install_application_from_url "$Microsoft_Word_url" > word.log 2>&1 && echo -e "${GREEN}Microsoft Word installed successfully.${NC}" || echo -e "${RED}Failed to install Microsoft Word.${NC}" &
+    install_application_from_url "$Microsoft_Excel_url" > excel.log 2>&1 && echo -e "${GREEN}Microsoft Excel installed successfully.${NC}" || echo -e "${RED}Failed to install Microsoft Excel.${NC}" &
+    install_application_from_url "$Microsoft_PowerPoint_url" > powerpoint.log 2>&1 && echo -e "${GREEN}Microsoft PowerPoint installed successfully.${NC}" || echo -e "${RED}Failed to install Microsoft PowerPoint.${NC}" &
+    install_application_from_url "$air_server_url" > air_server.log 2>&1 && echo -e "${GREEN}Air Server installed successfully.${NC}" || echo -e "${RED}Failed to install Air Server.${NC}" &
+    install_application_from_url "$crisis_go" > crisis_go.log 2>&1 && echo -e "${GREEN}Crisis Go installed successfully.${NC}" || echo -e "${RED}Failed to install Crisis Go.${NC}" &
+    install_application_from_url "$onyx_url" > onyx.log 2>&1 && echo -e "${GREEN}Onyx installed successfully.${NC}" || echo -e "${RED}Failed to install Onyx.${NC}" &
+    install_application_from_url "$cannon_driver_url" > cannon_driver.log 2>&1 && echo -e "${GREEN}Cannon Driver installed successfully.${NC}" || echo -e "${RED}Failed to install Cannon Driver.${NC}" &
+    install_application_from_url "$google_chrome_url" > google_chrome.log 2>&1 && echo -e "${GREEN}Google Chrome installed successfully.${NC}" || echo -e "${RED}Failed to install Google Chrome.${NC}" &
     
     # Wait for all installations to complete
     wait
 }
 
-install_applications
+#install_applications
+
+#dubugging
+echo "Microsoft Word URL: $Microsoft_Word_url"
+echo "Microsoft Excel URL: $Microsoft_Excel_url"
+echo "Microsoft PowerPoint URL: $Microsoft_PowerPoint_url"
+echo "Zoom URL: $zoom_url"
+echo "Smart Notebook URL: $smart_notebook_url"
+echo "Onyx URL: $onyx_url"
 
 print_finished
 
