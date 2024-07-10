@@ -70,6 +70,7 @@ install_application_from_url "$google_chrome_url"
 }
 
 #install_applications
+echo "dev"
 install_application_from_url "$Microsoft_Word_url"
 
 print_finished
