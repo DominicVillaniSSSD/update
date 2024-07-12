@@ -69,9 +69,9 @@ install_application_from_url "$cannon_driver_url"
 install_application_from_url "$google_chrome_url"
 }
 
-#install_applications
+install_applications
 echo "dev"
-install_application_from_url "$Microsoft_Word_url"
+#install_application_from_url "$Microsoft_Word_url"
 
 print_finished
 
