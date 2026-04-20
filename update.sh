@@ -25,9 +25,6 @@ Start_From_Server() {
     branch="main"
 
     # Download necessary scripts
-    echo -e "${YELLOW}Downloading scripts...${NC}"
-    #https://raw.githubusercontent.com/DominicVillaniSSSD/SSSDUpdate/refs/heads/main/update.sh
-    #https://raw.githubusercontent.com/DominicVillaniSSSD/SSSDUpdate/refs/heads/main/curl.sh
     curl -L -O https://raw.githubusercontent.com/DominicVillaniSSSD/SSSDUpdate/refs/heads/$branch/curl.sh #has download links for applications
     curl -L -O https://raw.githubusercontent.com/DominicVillaniSSSD/SSSDUpdate/refs/heads/$branch/install_handlers.sh #has instructions for how to install diffrent types of installers
     curl -L -O https://raw.githubusercontent.com/DominicVillaniSSSD/SSSDUpdate/refs/heads/$branch/logo.sh #has logos for SSSD and Finished and fentions to call them 
@@ -40,6 +37,7 @@ Start_From_Server() {
     source logo.sh
     source choice.sh
 
+    clear
     print_logo
 
     if [ "$branch" == "testing" ]; then
@@ -67,6 +65,7 @@ Start_From_Local() {
     source logo.sh
     source choice.sh
 
+    clear
     print_logo
     echo "this is the $branch branch"
 

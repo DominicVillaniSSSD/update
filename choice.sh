@@ -136,7 +136,7 @@ install_applications_teacher(){
     start_smart_software
     install_application_from_url "$google_chrome_url"
     install_application_from_url "$google_drive_url"
-    install_application_from_url "$air_server_url"
+    #install_application_from_url "$air_server_url"
     install_application_from_url "$crisis_go"
     install_application_from_url "$cannon_driver"
     install_application_from_url "$visualizer_url"  
@@ -175,6 +175,23 @@ install_applications_everything(){
 
 }
 
+install_applications_music_teacher(){
+    add_everyone_to_printer_group
+    install_application_from_url "$VCast_url"
+    install_application_from_url "$GarageBand"
+    install_application_from_url "$app_cleaner_url"
+    install_application_from_url "$zoom_url"
+    fullcleanupSmartSoftware
+    install_application_from_url "$smart_notebook_url"
+    start_smart_software
+    install_application_from_url "$google_chrome_url"
+    install_application_from_url "$google_drive_url"
+    install_application_from_url "$air_server_url"
+    install_application_from_url "$crisis_go"
+    install_application_from_url "$cannon_driver"
+    install_application_from_url "$visualizer_url"  
+    install_application_from_url "$onyx_url"
+}
 list_and_install_applications() {
     echo -e "${NC}Please select the applications you would like to install by entering the corresponding numbers separated by spaces and pressing enter:${NC}"
     echo -e "${NC}(Type 'back' to go back to the main menu)${NC}"
@@ -193,6 +210,8 @@ list_and_install_applications() {
         "${BLUE}Microsoft Word${NC}"
         "${GREEN}Microsoft Excel${NC}"
         "${ORANGE}Microsoft PowerPoint${NC}"
+        "${RED}GarageBand${NC}"
+        "${MAGENTA}VCast${NC}"
     )
 
     for i in "${!options[@]}"; do
@@ -230,6 +249,8 @@ list_and_install_applications() {
             11) install_application_from_url "$word_url" ;;
             12) install_application_from_url "$excel_url" ;;
             13) install_application_from_url "$powerpoint_url" ;;
+            14) install_application_from_url "$GarageBand" ;;
+            15) install_application_from_url "$VCast_url" ;;
             *) echo "Invalid choice: $choice" ;;
         esac
     done
@@ -256,10 +277,11 @@ first_choice(){
     echo -e "${CYAN}2. Update using Office Macmini preset${NC}"
     echo -e "${GREEN}3. Update everything - This will take a while${NC}" 
     echo -e "${MAGENTA}4. Manually select what to update${NC}"
-    echo -e "${RED}5. More Options${NC}"
-    echo -e "${BLUE}6. Exit${NC}"
+    echo -e "${BLUE}5. Update using Music Teacher preset${NC}"
+    echo -e "${RED}6. More Options${NC}"
+    echo -e "${BLUE}7. Exit${NC}"
     
-    read -p "Enter your choice (1-6): " choice
+    read -p "Enter your choice (1-7): " choice
     
     case $choice in
         1)
@@ -280,9 +302,13 @@ first_choice(){
             ;;
         5)
             clear
-            more_options
+            install_applications_music_teacher
             ;;
         6)
+            clear
+            more_options
+            ;;
+        7)
             echo "Exiting..."
             exit 0
             ;;
@@ -297,12 +323,13 @@ first_choice(){
 more_options(){
     echo "Please select an option by entering the corresponding number and pressing enter:"
     echo -e "${YELLOW}1. Add everyone to the printer group${NC}"
-    echo -e "${CYAN}2. Stop SMART software${NC}"
-    echo -e "${GREEN}3. Start SMART software${NC}" 
-    echo -e "${MAGENTA}4. Main Menu${NC}"
-    echo -e "${RED}5. Exit${NC}"
+    echo -e "${CYAN}2. Purge SMART software${NC}"
+    echo -e "${GREEN}3. Stop SMART software${NC}" 
+    echo -e "${BLUE}4. Start SMART software${NC}"
+    echo -e "${MAGENTA}5. Main Menu${NC}"
+    echo -e "${RED}6. Exit${NC}"
     
-    read -p "Enter your choice (1-5): " choice
+    read -p "Enter your choice (1-6): " choice
     
     case $choice in
         1)
@@ -312,25 +339,28 @@ more_options(){
             ;;
         2)
             clear
-            stop_smart_software
+            fullcleanupSmartSoftware
             more_options
             ;;
         3)
             clear
-            start_smart_software
+            stop_smart_software
+            
             more_options
             ;;
         4)
             clear
-            first_choice
+            start_smart_software
+            more_options
             ;;
         5)
+            clear
+            first_choice
+            ;;
+        6)
+            clear
             echo "Exiting..."
             exit 0
-            ;;
-        *)
-            echo "Invalid choice: $choice"
-            first_choice
             ;;
     esac
 }
