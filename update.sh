@@ -74,13 +74,20 @@ Start_From_Local() {
 
 }
 
+check_local_files() {
+    # Print current directory
+    echo "Checking for required files in current directory: $(pwd)"
+    # Check for required local scripts
+    if [ -f "curl.sh" ] && [ -f "install_handlers.sh" ] && [ -f "logo.sh" ] && [ -f "setup.sh" ] && [ -f "choice.sh" ]; then
+        echo "All required local files found, running Start_From_Local."
+        Start_From_Local
+    else
+        echo "Some required files are missing, running Start_From_Server."
+        Start_From_Server
+    fi
+}
 
-
-
-Start_From_Server
-
-
-
+check_local_files
 
 first_choice
 
