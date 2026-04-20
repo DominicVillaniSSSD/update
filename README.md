@@ -2,11 +2,20 @@
 This Tool will not update the OS version just a handfull of apps that are listed bellow 
 
 ## How to run:
-To run this script paste the command below into the terminal with a user account with admin privileges  
 
-
+### Option 1  
+Paste this one liner command below into the terminal with a user account with admin privileges  
 ```
 curl -O https://raw.githubusercontent.com/DominicVillaniSSSD/SSSDUpdate/refs/heads/main/update.sh && chmod +x update.sh && sudo ./update.sh
+```
+
+### Option 2
+Clone repo and sudo run update.sh 
+```
+git clone https://github.com/DominicVillaniSSSD/SSSDUpdate
+ cd SSSDUpdate
+ chmod +x update.sh
+ ./update.sh 
 ```
 
 ### **This will update these apps:**  
